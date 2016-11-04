@@ -1,9 +1,11 @@
 require 'thread'
 require 'active_support'
 require 'active_support/time'
+require 'holidays'
 require 'time'
 require 'yaml'
 
+require 'holidays/core_extensions/date'
 require 'business_time/config'
 require 'business_time/business_hours'
 require 'business_time/business_days'

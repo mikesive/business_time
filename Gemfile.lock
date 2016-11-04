@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/TandaHQ/holidays
+  revision: a4134306f4139ad8ad4685bac73ccc0d5c031580
+  specs:
+    holidays (5.0.0)
+
 PATH
   remote: .
   specs:
@@ -31,10 +37,11 @@ PLATFORMS
 
 DEPENDENCIES
   business_time!
+  holidays!
   minitest
   minitest-rg
   rake
   rdoc
 
 BUNDLED WITH
-   1.11.2
+   1.13.6
