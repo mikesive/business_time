@@ -3,7 +3,8 @@ module BusinessTime
     # True if this time is on a workday (between 00:00:00 and 23:59:59), even if
     # this time falls outside of normal business hours.
     def workday?
-      weekday? && !BusinessTime::Config.holidays.include?(to_date)
+      weekday? && !to_date.holiday?
+      # weekday? && !BusinessTime::Config.holidays.include?(to_date)
     end
 
     # True if this time falls on a weekday.
@@ -132,11 +133,7 @@ module BusinessTime
       private
 
       def change_business_time time, hour, min=0, sec=0
-        if Time.zone
-          time.in_time_zone(Time.zone).change(:hour => hour, :min => min, :sec => sec)
-        else
-          time.change(:hour => hour, :min => min, :sec => sec)
-        end
+        time.change(:hour => hour, :min => min, :sec => sec)
       end
     end
 

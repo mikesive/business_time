@@ -1,5 +1,6 @@
 # Add workday and weekday concepts to the Date class
 class Date
+  include Holidays::CoreExtensions::Date
   include BusinessTime::TimeExtensions
 
   def business_days_until(to_date, inclusive = false)
